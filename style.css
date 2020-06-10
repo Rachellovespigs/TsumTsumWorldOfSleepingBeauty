@@ -1,0 +1,28 @@
+body{
+    background: url(Roses.jpg);
+    text-align: center;
+    color: blue;
+}
+
+canvas{
+    background: url(castle.jpg);
+    background-size: cover;
+}
+
+.left{
+    color: rgb(130, 130, 255);
+    float: left;
+}
+
+.right{
+    color: rgb(130, 130, 255);
+    float: right;
+}
+
+.left :hover{
+    background: linear-gradient(lightpink, rgb(255, 218, 149), rgb(255, 255, 164), rgb(165, 255, 165), rgb(156, 156, 255), rgb(255, 142, 255));
+}
+
+.right :hover{
+    background: linear-gradient(lightpink, rgb(255, 218, 149), rgb(255, 255, 164), rgb(165, 255, 165), rgb(156, 156, 255), rgb(255, 142, 255));
+}
