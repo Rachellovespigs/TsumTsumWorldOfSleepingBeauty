@@ -91,13 +91,8 @@ function moveBadGuy(){
   /*ctx.fillStyle = "black";
   ctx.fillRect(badX, badY, badHeight, badWidth);*/
   ctx.drawImage(dragonImage, badX, badY, badWidth, badHeight);
-  badY+=7;
-
-if (badY > 500)
-  {
-    badY = 0;
-    badX = Math.random() * 800;
-  }
+  badX = Math.random() * 800;
+  badY = Math.random() * 500;
 }
   
 function resposition(){
