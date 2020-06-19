@@ -37,15 +37,13 @@ function startGame()
 {
   canvas = document.getElementById("gc");
   ctx  = canvas.getContext("2d");
-
-  window.setInterval(update, 100);
+  window.setInterval(update, 1000);
 
 }
 
 function update()
 {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     moveBadGuy();
     moveGoodGuy();
 
