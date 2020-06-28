@@ -14,8 +14,8 @@ height = 60;
 width = 60;
 
 var badX, badY, badWidth, badHeight;
-badX = 10;
-badY = 10;
+badY = Math.random() * 500;
+badX = Math.random() * 800;
 badWidth = 40;
 badHeight = 40;
 
@@ -37,15 +37,20 @@ function startGame()
 {
   canvas = document.getElementById("gc");
   ctx  = canvas.getContext("2d");
-  window.setInterval(update, 1000);
-
+  window.setInterval(update, 100);
+  moveBadGuy();
 }
 
 function update()
 {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    moveBadGuy();
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // moveBadGuy();
     moveGoodGuy();
+
+    console.log("bad X = " + badX);
+    console.log("bad Y = " + badY);    
+    console.log("X = " + x);   
+    console.log("Y = " + y);     
 
   if(checkCollisions(badHeight, badWidth, badX, badY, width, height, x, y))
   {
@@ -57,6 +62,7 @@ function update()
 }
 
 function moveGoodGuy(){
+
   if(keys["ArrowRight"] == true && x <= 750)
     x+=10;
     
@@ -75,28 +81,30 @@ function moveGoodGuy(){
   ctx.fillRect(x, y, height, width);*/
 
   ctx.drawImage(donaldImage, x, y, width, height);
+
 }
       
 function drawScore()
 {
   ctx.fillStyle = "white";
-  ctx.font = "Raleway 100px";
+  ctx.font = "Raleway 500px";
   ctx.fillText("Score: " + score, 10, 10)
-  console.log()
+  console.log("Score: " + score)
 }
 
 function moveBadGuy(){
   /*ctx.fillStyle = "black";
   ctx.fillRect(badX, badY, badHeight, badWidth);*/
+  // badX = Math.random() * 800;
+  // badY = Math.random() * 500;
   ctx.drawImage(dragonImage, badX, badY, badWidth, badHeight);
-  badX = Math.random() * 800;
-  badY = Math.random() * 500;
 }
   
 function resposition(){
   {
-    badY = 0;
+    badY = Math.random() * 500;
     badX = Math.random() * 800;
+    moveBadGuy()
   }
 }
 
