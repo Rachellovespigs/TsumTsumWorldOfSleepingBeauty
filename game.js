@@ -41,10 +41,14 @@ function startGame()
   moveBadGuy();
 }
 
+function displayBadGuy(badX, badX){
+
+}
+
 function update()
 {
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // moveBadGuy();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    moveBadGuy(badX, badY);
     moveGoodGuy();
 
     console.log("bad X = " + badX);
@@ -87,8 +91,8 @@ function moveGoodGuy(){
 function drawScore()
 {
   ctx.fillStyle = "white";
-  ctx.font = "Raleway 500px";
-  ctx.fillText("Score: " + score, 10, 10)
+  ctx.font = "20px Verdana";
+  ctx.fillText("Score: " + score, 10, 50)
   console.log("Score: " + score)
 }
 
